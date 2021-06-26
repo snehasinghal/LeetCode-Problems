@@ -4,7 +4,7 @@ public:
         int res = 0;
         int rem;
         while(x){
-            if(res > INT_MAX/10 || res < INT_MIN/10)
+            if(res > 214748364|| res < -214748364)
                 return 0;
             rem=x%10;
             res = res*10 +rem;
