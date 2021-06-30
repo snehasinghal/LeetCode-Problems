@@ -1,0 +1,37 @@
+class Solution {
+public:
+    ListNode* insertionSortList(ListNode* head) {
+        ListNode* p = head;
+        ListNode* prev = head;
+        ListNode* cur = head->next;
+
+        while(cur){
+            if(head->val > cur->val){
+                prev->next = cur->next;
+                cur->next = p;
+                head = cur;
+                cur = prev->next;
+            }
+            else{
+                while(p->next->val < cur->val)
+                    p = p->next;
+
+                if (prev->val > cur->val)
+                {
+                    prev->next = cur->next;
+                    cur->next = p->next;
+                    p->next = cur;
+                    cur = prev->next;
+                }
+                else{
+                    prev = prev->next;
+                    cur = cur->next;
+                }
+            }
+            p = head;
+        }
+        return head;
+    
+        
+    }
+};
