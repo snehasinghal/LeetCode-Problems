@@ -6,6 +6,6 @@ public:
             v.insert(v.begin()+index[i],nums[i]); 
         }
         return v;
-        
+      
     }
 };
